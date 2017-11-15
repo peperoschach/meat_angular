@@ -8,16 +8,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 import { Component, Input, ContentChild } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { NgModel, FormControlName } from '@angular/forms';
 var InputComponent = (function () {
     function InputComponent() {
     }
     InputComponent.prototype.ngOnInit = function () {
     };
     InputComponent.prototype.ngAfterContentInit = function () {
-        this.input = this.model;
+        this.input = this.model || this.control;
         if (this.input === undefined) {
-            throw new Error('Esse componente precisa ser usado com uma diretiva ngModel');
+            throw new Error('Esse componente precisa ser usado com uma diretiva ngModel ou FormControlName');
         }
     };
     InputComponent.prototype.hasSuccess = function () {
@@ -40,6 +40,10 @@ __decorate([
     ContentChild(NgModel),
     __metadata("design:type", NgModel)
 ], InputComponent.prototype, "model", void 0);
+__decorate([
+    ContentChild(FormControlName),
+    __metadata("design:type", FormControlName)
+], InputComponent.prototype, "control", void 0);
 InputComponent = __decorate([
     Component({
         selector: 'mt-input-container',
