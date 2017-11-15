@@ -15,4 +15,7 @@ export class RatingComponent implements OnInit {
   ngOnInit() {
   }
 
+  setRate(r: number) {
+    this.rate = r;
+  }
 }

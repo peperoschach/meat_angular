@@ -15,6 +15,9 @@ var RatingComponent = (function () {
     }
     RatingComponent.prototype.ngOnInit = function () {
     };
+    RatingComponent.prototype.setRate = function (r) {
+        this.rate = r;
+    };
     return RatingComponent;
 }());
 RatingComponent = __decorate([
