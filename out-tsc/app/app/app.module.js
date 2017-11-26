@@ -9,6 +9,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -44,6 +45,7 @@ AppModule = __decorate([
         ],
         imports: [
             BrowserModule,
+            BrowserAnimationsModule,
             HttpModule,
             FormsModule,
             ReactiveFormsModule,

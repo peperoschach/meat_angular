@@ -13,6 +13,8 @@ import { RatingComponent } from './rating/rating.component';
 import { ShoppingCartService } from '../restaurants-details/shopping-cart/shopping-cart.service';
 import { RestaurantsService } from '../restaurants/restaurants.service';
 import { OrderService } from '../order/order.service';
+import { SnackbarComponent } from './messages/snackbar/snackbar.component';
+import { NotificationService } from './messages/notification.service';
 var SharedModule = SharedModule_1 = (function () {
     function SharedModule() {
     }
@@ -22,7 +24,8 @@ var SharedModule = SharedModule_1 = (function () {
             providers: [
                 ShoppingCartService,
                 RestaurantsService,
-                OrderService
+                OrderService,
+                NotificationService
             ]
         };
     };
@@ -33,7 +36,8 @@ SharedModule = SharedModule_1 = __decorate([
         declarations: [
             InputComponent,
             RadioComponent,
-            RatingComponent
+            RatingComponent,
+            SnackbarComponent
         ],
         imports: [
             CommonModule,
@@ -46,7 +50,8 @@ SharedModule = SharedModule_1 = __decorate([
             RatingComponent,
             CommonModule,
             FormsModule,
-            ReactiveFormsModule
+            ReactiveFormsModule,
+            SnackbarComponent
         ]
     })
 ], SharedModule);

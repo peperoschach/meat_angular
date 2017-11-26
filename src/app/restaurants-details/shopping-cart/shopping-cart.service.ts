@@ -1,9 +1,15 @@
 import {CartItem} from './cart-item.model';
 import {MenuItem} from '../menu-item/menu-item.model';
+import {Injectable} from '@angular/core';
+import {NotificationService} from '../../shared/messages/notification.service';
+
+@Injectable()
 
 export class ShoppingCartService {
 
   items: CartItem[] = [];
+
+  constructor(private notificationService: NotificationService) {}
 
 	clear() {
 		this.items = [];
@@ -21,6 +27,7 @@ export class ShoppingCartService {
 			/*Se as id forem diferentes eu adiciono um novo elemento ao carrinho*/
 			this.items.push(new CartItem(item));
 		}
+		this.notificationService.notify(`Você adicionou o item ${item.name} ao carrinho`);
 
 	}
 
@@ -37,7 +44,7 @@ export class ShoppingCartService {
 	removeItem(item: CartItem) {
 		/*usamos o método splice para remover apartir do indice em que estamos*/
 		this.items.splice(this.items.indexOf(item), 1);
-
+    this.notificationService.notify(`Você removeu o item ${item.menuItem.name} do carrinho`);
 	}
 
 	total(): number {
